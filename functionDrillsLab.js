@@ -175,7 +175,19 @@ console.log(nameGreeting)
 */
 
 //CODE HERE
-
+function faveColorFinder(color){
+  if(color==="red"){
+    return "red is a great color"
+  } else if (color==='green'){
+    return 'green is a solid favorite color'
+  } else if (color==='black'){
+    return 'so trendy'
+  } else {
+    return 'you need to evaluate your favorite color choice'
+  }
+}
+var colorRating=faveColorFinder("black")
+console.log(colorRating)
 
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -186,8 +198,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
-
+function printAllNames(arr){
+  for(let i =0; i<arr.length; i++){
+    console.log(arr[i])
+  }
+}
+printAllNames(namesArr)
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
@@ -197,7 +213,14 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+function thatsOdd(num){
+  if (num%2==0){
+    return "That's not odd!"
+  } else {
+    return "That is odd indeed!"
+  }
+}
+var oddChecker=thatsOdd(3)
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -211,7 +234,8 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 
 //CODE HERE
 
-
+var bestMovie=str=> `${str} is the best movie ever!`
+console.log(bestMovie("Sharknado"))
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 /* 
@@ -224,8 +248,18 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
-
-
+function bigOrSmall(arr){
+  answers=[]
+  for (let i =0; i<arr.length; i++){
+    if(arr[i]>100){
+      answers.push("small")
+    } else {
+      answers.push("big")
+    }
+  }
+  return answers
+}
+console.log(bigOrSmall(bigOrSmallArray))
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
@@ -235,8 +269,15 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
-
+function theEliminator(arr,str){
+  for(i in arr){
+    if(arr[i]===str){
+      arr.splice(i,1)
+    }
+  }
+  return arr
+}
+console.log(theEliminator(contestants,loser))
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
@@ -245,7 +286,10 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+function toUpper(str){
+  return str.toUpperCase()
+}
+console.log(toUpper(sampleString))
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
