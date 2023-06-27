@@ -301,7 +301,15 @@ console.log(toUpper(sampleString))
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
-
+function emailCheck(email){
+  email=""+email
+  email=email.trim()
+  if(email.includes("@")){
+    return "email verified"
+  }  else {
+    return "must provide a valid email address"
+  }
+}
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -309,16 +317,29 @@ console.log(toUpper(sampleString))
 */
 
 //CODE HERE
+function chocolateFrogs(goldNum){
 
-
+  return parseInt(goldNum/3);
+}
+var totalFrogs=chocolateFrogs(8999);
+console.log(totalFrogs)
 ////////////////// PROBLEM 20 ////////////////////
 /*
-  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
+You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
+function chocolateFrogs2(goldNum){
+  let counter=0
+  while (goldNum>=3){
+    counter++;
+    goldNum-=3
+  }
+  return counter;
+}
 
-
+var totalFrogs2=chocolateFrogs2(9000);
+console.log(totalFrogs2)
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
@@ -326,8 +347,16 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
-
-
+function isAscending(arr){
+  for (let i=1;i>arr.length;i++){
+    if (arr[i-1]>arr[i]){
+      return false;
+    }
+  }
+  return true
+}
+var arrayIsAscending=isAscending(sampleArray)
+console.log(arrayIsAscending)
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
@@ -350,13 +379,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["sailorDuck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["realDuck"]
